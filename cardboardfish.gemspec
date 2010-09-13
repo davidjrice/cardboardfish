@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "cardboardfish.gemspec",
      "lib/cardboardfish.rb",
      "spec/cardboardfish_spec.rb",
      "spec/spec.opts",
