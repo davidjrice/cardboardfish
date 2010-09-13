@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "cardboardfish"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Ruby API for Cardboardfish SMS http://www.cardboardfish.com}
+    gem.description = %Q{Ruby API for Cardboardfish SMS http://www.cardboardfish.com}
     gem.email = "me@davidjrice.co.uk"
     gem.homepage = "http://github.com/davidjrice/cardboardfish"
     gem.authors = ["David Rice"]
