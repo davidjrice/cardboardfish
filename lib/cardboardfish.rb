@@ -9,7 +9,7 @@ module Cardboardfish
   
   HOST = 'sms1.cardboardfish.com'
   PORT = '9001'
-  PATH = '/HTTPSMS'
+  PATH = 'HTTPSMS'
 
   def self.sms(options)
     http = Net::HTTP.new(HOST, PORT)
