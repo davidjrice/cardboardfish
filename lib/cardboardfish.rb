@@ -35,7 +35,43 @@ module Cardboardfish
     end
   end
 
+  def self.parse(receipt)
+    parts = receipt.split("#")
+    count = parts.shift
+    receipts = []
+    parts.each do |p|
+      receipts << self.parse_fragment(p)
+    end
+    return receipts
+  end
+  
   private
+
+  def self.parse_fragment(part)
+    fragments = part.split(":")
+    msg = {
+      :id => fragments[0],
+      :source => fragments[1],
+      :destination => fragments[2],
+      :status => delivery_receipt_codes[fragments[3]],
+      :gsm_error_code => fragments[4],
+      :time => Time.at(fragments[5].to_i),
+      :ref => fragments[6]
+    }
+  end
+
+  def self.delivery_receipt_codes
+    codes = {}
+    codes["1"]  = "DELIVERED"
+    codes["2"]  = "BUFFERED"
+    codes["3"]  = "FAILED"
+    codes["5"]  = "EXPIRED"
+    codes["6"]  = "REJECTED"
+    codes["7"]  = "ERROR"
+    codes["11"] = "UNKNOWN"
+    codes["12"] = "UNKNOWN"
+    return codes
+  end
 
   def self.defaults
     defaults = {}
