@@ -54,7 +54,7 @@ module Cardboardfish
       :source => fragments[1],
       :destination => fragments[2],
       :status => delivery_receipt_codes[fragments[3]],
-      :gsm_error_code => fragments[4],
+      :gsm_status => fragments[4],
       :time => Time.at(fragments[5].to_i),
       :ref => fragments[6]
     }
