@@ -28,7 +28,7 @@ module Cardboardfish
     options.each_pair do |k,v|
       options[k] = CGI::escape(v)
     end
-    uri = "/#{PATH}?S=#{options[:system_type]}&UN=#{@@username}&P=#{@@password}&DA=#{options[:destination]}&SA=#{options[:source]}&M=#{options[:message]}";
+    uri = "/#{PATH}?S=#{options[:system_type]}&UN=#{@@username}&P=#{@@password}&DR=#{options[:receipt]}&DA=#{options[:destination]}&SA=#{options[:source]}&M=#{options[:message]}";
     STDERR.puts uri
     response = http.start do |http|
       http.get(uri)
@@ -40,6 +40,7 @@ module Cardboardfish
   def self.defaults
     defaults = {}
     defaults[:system_type] = 'H'
+    defaults[:receipt] = "0"
     return defaults
   end
 
