@@ -77,7 +77,7 @@ module Cardboardfish
     defaults = {}
     defaults[:system_type] = 'H'
     defaults[:receipt] = "0"
-    options[:validity_period] = "1440"
+    defaults[:validity_period] = "1440"
     return defaults
   end
 
